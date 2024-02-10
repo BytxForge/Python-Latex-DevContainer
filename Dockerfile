@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/devcontainers/python:0-3.11
+FROM mcr.microsoft.com/devcontainers/python:0-3.12
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -10,7 +10,7 @@ RUN apt install -y `sudo apt --assume-no install texlive-full | \
         grep -vP 'texlive-lang' | \
         grep -vP 'latex-cjk' | \
         tr '\n' ' '`
-RUN apt install texlive-lang-english texlive-lang-german
+RUN apt install -y texlive-lang-english texlive-lang-german
 
 RUN apt-get install -y python3-pygments
 
